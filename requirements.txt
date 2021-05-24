@@ -1,1 +1,16 @@
-still empty
+bidict==0.21.2
+click==8.0.1
+flake8==3.9.2
+Flask==2.0.0
+itsdangerous==2.0.1
+Jinja2==3.0.1
+MarkupSafe==2.0.1
+mccabe==0.6.1
+netifaces==0.10.6
+pycodestyle==2.7.0
+pyflakes==2.3.1
+Werkzeug==2.0.1
+
+Flask-SocketIO==4.3.1
+python-engineio==3.13.2
+python-socketio==4.6.0
