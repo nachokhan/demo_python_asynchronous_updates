@@ -1,6 +1,5 @@
-from flask_socketio import SocketIO, emit
+from flask_socketio import SocketIO
 from flask import Flask, render_template, request
-from time import sleep
 from pubsub import pub
 
 
@@ -32,6 +31,12 @@ def post():
     if texto:
         pub.sendMessage('rootTopic', arg1=texto)
     return render_template("post.html")
+
+
+@app.route('/post2', methods=['GET', 'POST'])
+def post2():
+    pub.sendMessage('rootTopic', arg1="post2")
+    return render_template("post2.html")
 
 
 @socketio.on('connect')

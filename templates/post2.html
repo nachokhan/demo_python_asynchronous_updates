@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <div id="message"></div>
+    <button id="btn">CLICK</button>
+    <input type="text" id="texto" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //connect to the socket server.
+            var url = 'http://' + document.domain + ':' + location.port
+            var socket = io.connect(url);
+            console.log("URL: " + url)
+            $('#btn').on('click', function () {
+                textito = $('#texto').val()
+                console.log("ENVIA texto: " + textito)
+                fetch('http://' + document.domain + ':' + location.port + '/post2?texto=' + textito, { method: "POST" })
+            })
+
+        });
+    </script>
+</body>
+
+</html>
